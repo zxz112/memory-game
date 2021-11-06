@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CardController;
+use App\Http\Controllers\Api\GameResultController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/cards',  [CardController::class, 'index']);
+Route::get('/result',  [GameResultController::class, 'index']);
+Route::post('/result/store',  [GameResultController::class, 'store']);

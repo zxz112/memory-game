@@ -21,7 +21,6 @@ function createCards(cards) {
     let currentIndex = cards.length * 2;
     while (currentIndex != 0) {
         currentIndex--;
-        console.log(Math.floor(currentIndex / 2))
         result.push(Object.assign({'num': currentIndex, 'state': 'back'}, cards[Math.floor(currentIndex / 2)]))
     }
     return shuffle(result);

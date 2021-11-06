@@ -1,6 +1,13 @@
 <template>
-    <game v-if="true"></game>
-    <rating v-else></rating>
+    <div>
+        <div class="container">
+            <div class="menu">
+                <router-link class="nav--link" :to="{'name': 'game'}">Главная</router-link>
+                <router-link class="nav--link pr-3" :to="{'name': 'result'}">Таблица рейтинга</router-link>
+            </div>
+            <router-view></router-view>
+        </div>
+    </div>
 </template>
 
 <script>

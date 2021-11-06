@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 
 class CardController extends Controller
 {
     public function index(Request $request) {
-        $limit = $request->get('limit');
         $request->validate([
             'limit' => ['required', 'numeric'],
         ]);

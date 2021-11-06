@@ -23,10 +23,8 @@
         </style>
     </head>
     <body>
-    <div class="container">
-        <div id="app" class="main">
+        <div id="app" class="main container">
             <index></index>
         </div>
-    </div>
     </body>
 </html>

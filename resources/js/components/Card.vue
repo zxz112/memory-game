@@ -1,5 +1,7 @@
 <template>
-    <div class="game__card" :style="'background-image: url(' + background + ');'" @click="emitClick();">
+    <div :class="'card__' + this.state  + ' card'">
+        <div class="card__side card__back" @click="emitClick();"></div>
+        <div class="card__side card__front" :style="`background-image:url(${this.card.img})`"></div>
     </div>
 </template>
 
@@ -13,10 +15,10 @@ export default {
     },
     mounted() {
     },
-    props: ['card', 'cardBack', 'lockEvent'],
+    props: ['card', 'lockEvent'],
     methods: {
         emitClick() {
-            if (this.card.state == 'hide' || this.lockEvent) {
+            if (this.card.state === 'face' || this.lockEvent) {
                 return;
             }
             this.$emit('selectCard', this.card);
@@ -27,15 +29,8 @@ export default {
         }
     },
     computed: {
-        background() {
-            console.log(this.card.state)
-            if (this.card.state == 'hide') {
-                return '';
-            }
-            if (this.card.state == 'face') {
-                return this.card.img;
-            }
-            return this.cardBack;
+        state() {
+            return this.card.state;
         },
         lock() {
             return this.lockEvent;
