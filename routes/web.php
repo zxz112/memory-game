@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any?}', function () {
-    return view('welcome');
-})->where('any', '^(?!api\/)[\/\w\.\,-]*');
+//Route::get('/{any?}', function () {
+//    return view('welcome');
+//})->where('any', '^(?!api\/)[\/\w\.\,-]*');
 
-//Route::resource('card', 'App\Http\Controllers\Api\CardController');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::resource('card', 'App\Http\Controllers\Api\CardController');

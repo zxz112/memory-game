@@ -87,6 +87,9 @@ html {
     @media only screen and (max-width: 430px) {
         font-size: 30%;
     }
+    @media only screen and (max-width: 320px) {
+        font-size: 25%;
+    }
 }
 body {
     height: 100vh;
@@ -94,15 +97,13 @@ body {
     background-repeat: no-repeat;
     background-color: #5b6467;
     background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
-    padding-top: 15vh;
-    overflow: hidden;
+    padding-top: 10rem;
     font-size: 2.4rem;
     color: white;
 }
 .container {
     margin: 0 auto;
     width: 60rem;
-    height: 60rem;
 }
 
 .menu {
