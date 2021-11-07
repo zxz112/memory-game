@@ -146,7 +146,7 @@ export default {
             return this.cards;
         },
         gameIsOver() {
-            if (this.loading) {
+            if (this.loading || this.errors) {
                 return false;
             }
             let isOver = true;
