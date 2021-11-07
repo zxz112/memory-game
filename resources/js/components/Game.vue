@@ -146,10 +146,10 @@ export default {
             return this.cards;
         },
         gameIsOver() {
-            let isOver = true;
             if (this.loading) {
                 return false;
             }
+            let isOver = true;
             this.cardsAll.forEach(card => {
                 if (card.state !== 'face') {
                     isOver = false;
