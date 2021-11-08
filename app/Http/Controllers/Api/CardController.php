@@ -14,7 +14,7 @@ class CardController extends Controller
         ]);
         $cards = Card::skip(0)->take($request->limit)->get();
         $cards->each(function($card) {
-           $card->img = '/storage/' . $card->file_path;
+           $card->img = '/upload/' . $card->file_path;
         });
         return $cards;
     }
@@ -30,22 +30,22 @@ class CardController extends Controller
         ]);
 
         // ensure the request has a file before we attempt anything else.
-        if ($request->hasFile('file')) {
+//        if ($request->hasFile('file')) {
 
-            $request->validate([
-                'image' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
-            ]);
-
-            // Save the file locally in the storage/public/ folder under a new folder named /product
-            $request->file->store('public');
+//            $request->validate([
+//                'image' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+//            ]);
+//
+//            // Save the file locally in the storage/public/ folder under a new folder named /product
+//            $request->file->store('public');
 
             // Store the record, using the new file hashname which will be it's new filename identity.
             $card = new Card([
                 "name" => $request->get('name'),
-                "file_path" => $request->file->hashName()
+                "file_path" => $request->get('name')
             ]);
             $card->save(); // Finally, save the record.
-        }
+//        }
 
         return view('card');
 
